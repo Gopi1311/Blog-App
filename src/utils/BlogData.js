@@ -1,10 +1,10 @@
-import blogcardImg1 from '../assets/blogcardImg1.avif'
-import blogcardImg2 from '../assets/blogcardImg2.jpg'
-import blogcardImg3 from '../assets/blogcardImg3.png'
-import blogcardImg4 from '../assets/blogcardImg4.png'
-import blogcardImg5 from '../assets/blogcardImg5.png'
-import blogcardImg6 from '../assets/blogcardImg6.jpg'
-import blogcardImg7 from '../assets/blogcardImg7.png'
+import blogcardImg1 from '../assets/blogCardImg1.avif'
+import blogcardImg2 from '../assets/blogCardImg2.jpg'
+import blogcardImg3 from '../assets/blogCardImg3.png'
+import blogcardImg4 from '../assets/blogCardImg4.png'
+import blogcardImg5 from '../assets/blogCardImg5.png'
+import blogcardImg6 from '../assets/blogCardImg6.jpg'
+import blogcardImg7 from '../assets/blogCardImg7.png'
 
 export const LatestPosts = [
   {
