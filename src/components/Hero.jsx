@@ -17,7 +17,6 @@ const Hero = () => {
         color: theme === "dark" ? "white" : "black",
       }}
     >
-    
       {/* Hero Image & Card */}
       <div className="row justify-content-center align-items-center flex-grow-1">
         <div className="col-12 col-md-10 col-lg-10 position-relative text-center">
@@ -30,12 +29,11 @@ const Hero = () => {
 
           {/* Overlay Card */}
           <div
-            className="card shadow text-white"
+            className="card shadow text-white overlay-card"
             style={{
-              margin: "-80px 0 0 30px", // slightly reduced pull-up
-              maxWidth: "450px",
-              width: "90%",
-              backgroundColor: theme==="dark"?"rgba(6, 6, 34, 0.927)":"#3f3e3eff",
+              margin: "-80px 0 0 30px", // center for mobile
+              backgroundColor:
+                theme === "dark" ? "rgba(6, 6, 34, 0.927)" : "#3f3e3eff",
             }}
           >
             <div className="card-body d-flex flex-column align-items-start gap-2 p-3">
@@ -46,25 +44,23 @@ const Hero = () => {
                 The Impact of Technology on the Workplace: How Technology is
                 Changing
               </h5>
-              <p className="card-text">
+              <p className="card-text mb-0">
                 <i className="bi bi-person-circle"></i> John Doe | Aug 24, 2023
               </p>
             </div>
           </div>
         </div>
       </div>
-        {/* Advertisement Row */}
-      <div
-        className="row justify-content-center mt-3 mb-3"
-        style={{ marginTop: "20px" }} // reduced space
-      >
+
+      {/* Advertisement Row */}
+      <div className="row justify-content-center mt-3 mb-3">
         <div className="col-11 col-md-8 col-lg-6">
           <div
             className="d-flex flex-column justify-content-center align-items-center text-center rounded"
             style={{
               backgroundColor: "#3f3e3e76",
               height: "100px",
-              color: theme==="dark"?"#b5b5b5":"#3f3e3ebc",
+              color: theme === "dark" ? "#b5b5b5" : "#3f3e3ebc",
             }}
           >
             <p className="mb-1">Advertisement</p>
@@ -74,6 +70,40 @@ const Hero = () => {
         </div>
       </div>
 
+      {/* Responsive CSS */}
+      <style>{`
+        .overlay-card {
+          max-width: 450px;
+          width: 90%;
+        }
+
+        @media (max-width: 768px) { /* md and below */
+          .overlay-card {
+            max-width: 350px;
+            margin: -40px auto 0 auto;
+            font-size: 0.9rem;
+          }
+          .overlay-card h5 {
+            font-size: 1rem;
+          }
+        }
+
+        @media (max-width: 576px) { /* sm and below */
+          .overlay-card {
+            max-width: 280px;
+            
+            margin: -30px auto 0 auto;
+            font-size: 0.85rem;
+          }
+          .overlay-card h5 {
+            font-size: 0.8rem;
+          }
+    
+          .overlay-card p,.overlay-card button{
+            font-size:0.8rem;
+          }
+        }
+      `}</style>
     </div>
   );
 };

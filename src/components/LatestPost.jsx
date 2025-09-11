@@ -22,7 +22,7 @@ const LatestPost = ({ id }) => {
         {/* Header section */}
         <div className="d-flex justify-content-between align-items-center mb-4">
           <h2 className="mb-0">Latest Posts</h2>
-          <Link to="/viewAllPosts" className="btn btn-outline-primary">View More</Link>
+          <Link to="/viewAllPosts/all" className="btn btn-outline-primary">View More</Link>
         </div>
 
         {/* Cards section */}
