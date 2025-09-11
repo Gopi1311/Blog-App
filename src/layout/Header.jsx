@@ -2,26 +2,20 @@ import { useContext } from "react";
 import { FaBlog } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { SunFill, MoonFill } from "react-bootstrap-icons";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { ThemeContext } from "../context/ThemeContext";
 
 const Header = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
-
   const closeNavbar = () => {
-
-  const navbarCollapse = document.getElementById("navbarNav");
-  if (navbarCollapse.classList.contains("show")) {
-    // Use Bootstrap's collapse method
-    const bsCollapse = new window.bootstrap.Collapse(navbarCollapse, {
-      toggle: true,
-    });
-    bsCollapse.hide();
-  }
-};
-
-
+    const navbarCollapse = document.getElementById("navbarNav");
+    if (navbarCollapse.classList.contains("show")) {
+      const bsCollapse = new window.bootstrap.Collapse(navbarCollapse, {
+        toggle: true,
+      });
+      bsCollapse.hide();
+    }
+  };
   return (
     <nav
       className="navbar navbar-expand-lg"
@@ -58,25 +52,45 @@ const Header = () => {
         </button>
 
         {/* Navbar Links */}
-        <div className="collapse navbar-collapse rounded position-relative" id="navbarNav" style={{ backgroundColor:"black",zIndex: "1050",  padding: "1rem" }} >
+        <div
+          className="collapse navbar-collapse rounded position-relative"
+          id="navbarNav"
+          style={{ backgroundColor: "black", zIndex: "1050", padding: "1rem" }}
+        >
           <ul className="navbar-nav mx-auto gap-3 ">
             <li className="nav-item ">
-              <Link className="nav-link text-white under-line" to="/"  onClick={closeNavbar} >
+              <Link
+                className="nav-link text-white under-line"
+                to="/"
+                onClick={closeNavbar}
+              >
                 Home
               </Link>
             </li>
             <li className="nav-item ">
-              <Link className="nav-link text-white under-line" to="/#latest-post"  onClick={closeNavbar} >
+              <Link
+                className="nav-link text-white under-line"
+                to="/#latest-post"
+                onClick={closeNavbar}
+              >
                 Blogs
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-white under-line" to="/createBlog"  onClick={closeNavbar} >
+              <Link
+                className="nav-link text-white under-line"
+                to="/createBlog"
+                onClick={closeNavbar}
+              >
                 Create Blog
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link text-white under-line" to="/viewAllPosts/all"  onClick={closeNavbar} >
+              <Link
+                className="nav-link text-white under-line"
+                to="/viewAllPosts/all"
+                onClick={closeNavbar}
+              >
                 ViewAllBlogs
               </Link>
             </li>
@@ -93,32 +107,56 @@ const Header = () => {
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <Link className="dropdown-item" to="/viewAllPosts/Technology"  onClick={closeNavbar} >
+                  <Link
+                    className="dropdown-item"
+                    to="/viewAllPosts/Technology"
+                    onClick={closeNavbar}
+                  >
                     Technology
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/viewAllPosts/Lifestyle"  onClick={closeNavbar} >
+                  <Link
+                    className="dropdown-item"
+                    to="/viewAllPosts/Lifestyle"
+                    onClick={closeNavbar}
+                  >
                     Lifestyle
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/viewAllPosts/Travel"  onClick={closeNavbar} >
+                  <Link
+                    className="dropdown-item"
+                    to="/viewAllPosts/Travel"
+                    onClick={closeNavbar}
+                  >
                     Travel
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/viewAllPosts/Food"  onClick={closeNavbar} >
+                  <Link
+                    className="dropdown-item"
+                    to="/viewAllPosts/Food"
+                    onClick={closeNavbar}
+                  >
                     Food
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/viewAllPosts/Health"  onClick={closeNavbar} >
+                  <Link
+                    className="dropdown-item"
+                    to="/viewAllPosts/Health"
+                    onClick={closeNavbar}
+                  >
                     Health
                   </Link>
                 </li>
                 <li>
-                  <Link className="dropdown-item" to="/viewAllPosts/Business"  onClick={closeNavbar} >
+                  <Link
+                    className="dropdown-item"
+                    to="/viewAllPosts/Business"
+                    onClick={closeNavbar}
+                  >
                     Business
                   </Link>
                 </li>

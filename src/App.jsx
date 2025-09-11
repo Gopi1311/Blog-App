@@ -1,14 +1,17 @@
+import Home from "./pages/Home";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
 import BlogDetails from "./pages/BlogDetails";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import { ThemeProvider } from "../src/context/ThemeContext"; // ✅ import
-import ScrollToTop from "./components/ScrollToTop";
 import CreateBlog from "./pages/CreateBlog";
 import ViewAllPosts from "./pages/ViewAllPosts";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import { ThemeProvider } from "../src/context/ThemeContext";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 function App() {
   return (

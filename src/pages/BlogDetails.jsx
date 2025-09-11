@@ -1,13 +1,12 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { useParams } from "react-router-dom";
-import { LatestPosts } from "../utils/BlogData";
 import { ThemeContext } from "../context/ThemeContext";
 import { format } from "date-fns";
 
 const BlogDetails = () => {
   const { id } = useParams();
-  const { theme,blogs } = useContext(ThemeContext);
-    const post = blogs[id];
+  const { theme, blogs } = useContext(ThemeContext);
+  const post = blogs[id];
 
   if (!post) {
     return (
@@ -19,7 +18,8 @@ const BlogDetails = () => {
 
   return (
     <div
-      className="container p-5 my-4 rounded shadow-sm" style={{
+      className="container p-5 my-4 rounded shadow-sm"
+      style={{
         maxWidth: "1000px",
         backgroundColor:
           theme === "dark" ? "rgba(6,6,34,0.927)" : "rgba(175, 175, 177, 0.13)",
@@ -46,7 +46,11 @@ const BlogDetails = () => {
         } mb-4`}
       >
         <img
-          src={post.image instanceof File ? URL.createObjectURL(post.image) : post.image}
+          src={
+            post.image instanceof File
+              ? URL.createObjectURL(post.image)
+              : post.image
+          }
           alt="porfile img"
           width={15}
           className="rounded-circle me-2 "
@@ -59,7 +63,11 @@ const BlogDetails = () => {
       {/* Blog Image */}
       <div className="mb-4">
         <img
-          src={post.image instanceof File ? URL.createObjectURL(post.image) : post.image}
+          src={
+            post.image instanceof File
+              ? URL.createObjectURL(post.image)
+              : post.image
+          }
           alt="blog"
           className="img-fluid rounded shadow-sm"
           style={{ width: "100%", height: "400px", objectFit: "cover" }}
@@ -68,9 +76,7 @@ const BlogDetails = () => {
 
       {/* Blog Content */}
       <div className="blog-content lh-lg">
-        <p>
-         {post.description}
-        </p>
+        <p>{post.description}</p>
 
         <p>
           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum

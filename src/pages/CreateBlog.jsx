@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { ThemeContext, } from "../context/ThemeContext";
+import { ThemeContext } from "../context/ThemeContext";
 import { useNavigate } from "react-router-dom";
-import { toast,ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const CreateBlog = () => {
-  const { theme ,addBlog} = useContext(ThemeContext);
+  const { theme, addBlog } = useContext(ThemeContext);
   const [blog, setBlog] = useState({
     title: "",
     description: "",
@@ -21,7 +21,7 @@ const CreateBlog = () => {
   const [uploadStatus, setUploadStatus] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (field, value) => {
     setBlog((prev) => ({ ...prev, [field]: value }));
@@ -80,7 +80,7 @@ const CreateBlog = () => {
       console.log("📌 Blog Data:", blog);
       setIsSubmitting(false);
 
-      navigate('/');
+      navigate("/");
     }, 5000);
   };
 
@@ -91,12 +91,18 @@ const CreateBlog = () => {
         style={{
           maxWidth: "60%",
           backgroundColor:
-            theme === "dark" ? "rgba(6,6,34,0.927)" : "rgba(175, 175, 177, 0.13)",
+            theme === "dark"
+              ? "rgba(6,6,34,0.927)"
+              : "rgba(175, 175, 177, 0.13)",
           color: theme === "dark" ? "white" : "black",
         }}
       >
         <h2 className="text-center">Create New Blog</h2>
-        <p className={`text-center ${theme==="dark"? 'text-white':'text-muted'}  `}>
+        <p
+          className={`text-center ${
+            theme === "dark" ? "text-white" : "text-muted"
+          }  `}
+        >
           Share your thoughts and ideas with the world
         </p>
 
@@ -129,7 +135,7 @@ const CreateBlog = () => {
                 <option>Food</option>
                 <option>Health</option>
                 <option>Business</option>
-                 <option>Sports</option>
+                <option>Sports</option>
                 <option>Economy</option>
               </select>
             </div>
@@ -195,7 +201,11 @@ const CreateBlog = () => {
               onClick={() => document.getElementById("fileInput").click()}
             >
               <p>📂 Drag & drop your image here or click to browse</p>
-              <p className={`${theme==="dark"? 'text-white':'text-muted'} small my-4`}>
+              <p
+                className={`${
+                  theme === "dark" ? "text-white" : "text-muted"
+                } small my-4`}
+              >
                 Supports JPG, PNG, GIF up to 5MB
               </p>
               <input

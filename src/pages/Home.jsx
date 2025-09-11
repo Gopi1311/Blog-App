@@ -1,10 +1,10 @@
-import React ,{useEffect} from "react";
+import { useEffect } from "react";
 import Hero from "../components/Hero";
 import LastestPost from "../components/LatestPost";
 import { useLocation } from "react-router-dom";
 
 const Home = () => {
-  const {hash} = useLocation();
+  const { hash } = useLocation();
   useEffect(() => {
     if (hash === "#latest-post") {
       const element = document.getElementById("latest-post");

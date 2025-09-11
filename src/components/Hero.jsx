@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import heroImg from "../assets/heroImg.png";
-import { ThemeContext } from "../context/ThemeContext"; // ✅
+import { ThemeContext } from "../context/ThemeContext";
 
 const Hero = () => {
   const { theme } = useContext(ThemeContext);
